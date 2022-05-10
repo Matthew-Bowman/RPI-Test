@@ -10,6 +10,7 @@ const client = new Client({intents: [Intents.FLAGS.GUILDS]});
 // Handle Client Events
 client.on(`ready`, () => {
     console.log(`${client.user.username} is now online!`);
+    client.user.setActivity("Manpreet Smells Nice :)");
 })
 
 // Log Client In
