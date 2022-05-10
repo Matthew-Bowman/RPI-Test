@@ -1,11 +1,16 @@
 // Require Modules
-const discord = require(`discord.js`);
+const {Client, Intents} = require(`discord.js`);
+require(`dotenv`).config();
 
 // Instatiate Client
-const token = "OTcxMjIyMTc5NDM1OTM3ODg4.YnHXJA.Gw6vyKTN05WqY7Yp4I_ZC6rMwsw";
-const client = new discord.Client(token);
+const token = process.env.TOKEN;
+// console.log(process.env.TOKEN);
+const client = new Client({intents: [Intents.FLAGS.GUILDS]});
 
 // Handle Client Events
 client.on(`ready`, () => {
     console.log(`${client.user.username} is now online!`);
 })
+
+// Log Client In
+client.login(token);
